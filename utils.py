@@ -19,7 +19,7 @@ def saveToCSVandExcel(df, country=None):
     df.to_excel(f"RAW_DATA_XLSX/{country}_raw_data.xlsx", index=False)
 
 # function to convert data into panel format
-def convertToPanelFormat(df, country_name):
+def convertToPanelFormat(df, country):
     df_long = df.melt(
         id_vars=["series", "Series"],
         var_name="year",
@@ -34,6 +34,6 @@ def convertToPanelFormat(df, country_name):
         values="value"
     ).reset_index()
 
-    df_final.insert(0, "country", country_name)
+    df_final.insert(0, "country", country)
 
     return df_final
