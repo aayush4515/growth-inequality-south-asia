@@ -15,6 +15,25 @@ def extractCountryData(country):
 
 # function to save the dataframe to an excel and csv file, country too if provided
 def saveToCSVandExcel(df, country=None):
-    df.to_csv(f"DATA_CSV/{country}_raw_data.csv", index=False)
-    df.to_excel(f"DATA_XLSX/{country}_raw_data.xlsx", index=False)
+    df.to_csv(f"RAW_DATA_CSV/{country}_raw_data.csv", index=False)
+    df.to_excel(f"RAW_DATA_XLSX/{country}_raw_data.xlsx", index=False)
 
+# function to convert data into panel format
+def convertToPanelFormat(df, country_name):
+    df_long = df.melt(
+        id_vars=["series", "Series"],
+        var_name="year",
+        value_name="value"
+    )
+
+    df_long["year"] = df_long["year"].str.replace("YR", "").astype(int)
+
+    df_final = df_long.pivot_table(
+        index=["year"],
+        columns="series",
+        values="value"
+    ).reset_index()
+
+    df_final.insert(0, "country", country_name)
+
+    return df_final
