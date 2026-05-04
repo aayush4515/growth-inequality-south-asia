@@ -385,3 +385,10 @@ Future work may include:
 ## Notes
 
 This project is part of an economics research workflow focused on growth and inequality in South Asia. The code is written in Python and organized around reproducible data preparation, missing data treatment, and panel dataset construction.
+
+---
+
+## Contributors
+
+[Aayush Acharya](https://github.com/aayush4515) <br />
+[Inaya Zoraiz](https://github.com/izora0483)
