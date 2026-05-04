@@ -16,3 +16,20 @@ economies = ["BGD", "IND", "NPL", "PAK", "LKA"]
 
 # countries
 countries = ["Bangladesh", "India", "Nepal", "Pakistan", "Srilanka"]
+
+# columns to use in the imputation model
+impute_cols = [
+    "year",
+    "education",
+    "fdi",
+    "gdp_growth",
+    "log_gdp_pc",
+    "industry",
+    "inflation",
+    "trade",
+    "unemployment",
+    "urban",
+    "va_score",
+    "cc_score",
+    "ge_score"
+]

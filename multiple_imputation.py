@@ -1,27 +1,10 @@
 # run multiple imputation country-wise and create 5 datasets per country
 
-from constants import countries, economies
+from constants import countries, economies, impute_cols
 import pandas as pd
 from statsmodels.imputation.mice import MICEData
 import os
 import time
-
-# columns to use in the imputation model
-impute_cols = [
-    "year",
-    "education",
-    "fdi",
-    "gdp_growth",
-    "log_gdp_pc",
-    "industry",
-    "inflation",
-    "trade",
-    "unemployment",
-    "urban",
-    "va_score",
-    "cc_score",
-    "ge_score"
-]
 
 # function to run multiple imputation per country/economy
 def runMultipleImputation(economy, numDatasets, numImputations):
@@ -42,13 +25,13 @@ def runMultipleImputation(economy, numDatasets, numImputations):
         for j in range(numImputations):
             imp_data.update_all()
 
-        # replace the original numeric columns with numeric values
+        # replace the original numeric columns with updated values
         df_working[impute_cols] = imp_data.data
 
         # append the imputed dataset to imputed_datasets
         imputed_datasets.append(df_working.copy())
 
-    # return the imputed datasets
+    # return the imputed datasets for that economy
     return imputed_datasets
 
 # create a directory to hold the imputed data
