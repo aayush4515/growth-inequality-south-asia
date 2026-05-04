@@ -390,5 +390,5 @@ This project is part of an economics research workflow focused on growth and ine
 
 ## Contributors
 
-[Aayush Acharya](https://github.com/aayush4515) <br />
-[Inaya Zoraiz](https://github.com/izora0483)
+[Aayush Acharya](https://github.com/aayush4515) - CS & Math at Elmhurst University <br />
+[Inaya Zoraiz](https://github.com/izora0483) - Economics & Information Systems at Elmhurst University
