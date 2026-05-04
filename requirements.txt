@@ -2,3 +2,4 @@ wbgapi
 pandas
 openpyxl
 numpy
+statsmodels
