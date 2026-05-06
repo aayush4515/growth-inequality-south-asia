@@ -2,6 +2,7 @@
 from constants import economies
 import statsmodels.formula.api as sm
 import pandas as pd
+import os
 from pathlib import Path
 
 # function to created an OLS model for one country
@@ -44,9 +45,32 @@ def runRegression():
 # run the pooled regression
 results = runRegression()
 
-# print summary of each country
-for result_num, result in enumerate(results, start=1):
-    print(f"Pooled result of dataset {result_num} for all countries:")
-    print(result.summary())
+if __name__ == '__main__':
+
+    # print summary of each pooled dataset
+
+    # create folder once
+    os.makedirs("REGRESSION_SUMMARY/POOLED", exist_ok=True)
+    saving_dir = "REGRESSION_SUMMARY/POOLED"
+
+    # one combined file
+    file_path = f"{saving_dir}/pooled_regression_summaries.txt"
+
+    # clear the file first so old results do not stay there
+    with open(file_path, "w") as file:
+        file.write("POOLED REGRESSION SUMMARIES FOR ALL IMPUTED DATASETS\n")
+        file.write("=" * 80 + "\n\n")
+
+    # append each summary to the same file
+    for result_num, result in enumerate(results, start=1):
+        print(f"Pooled result of dataset {result_num} for all countries:")
+
+        with open(file_path, "a") as file:
+            file.write(f"\n\nPooled result of dataset {result_num} for all countries:\n")
+            file.write("=" * 80 + "\n")
+            file.write(result.summary().as_text())
+            file.write("\n" + "=" * 80 + "\n")
+
+        print(result.summary())
 
 

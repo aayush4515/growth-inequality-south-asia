@@ -1,0 +1,31 @@
+FINAL POOLED RESULT FOR GDP GROWTH
+============================================================
+
+Coefficient: -0.030008
+Standard Error: 0.015283
+z-score: -1.963462
+p-value: 0.049592
+95% CI: [-0.059964, -0.000053]
+
+Individual results from each imputed dataset:
+------------------------------------------------------------
+Dataset 1: coefficient = -0.016995, SE = 0.011271
+Dataset 2: coefficient = -0.025226, SE = 0.012935
+Dataset 3: coefficient = -0.036321, SE = 0.010748
+Dataset 4: coefficient = -0.031858, SE = 0.018018
+Dataset 5: coefficient = -0.038357, SE = 0.014544
+Dataset 6: coefficient = -0.019341, SE = 0.012578
+Dataset 7: coefficient = -0.024237, SE = 0.007186
+Dataset 8: coefficient = -0.023507, SE = 0.008318
+Dataset 9: coefficient = -0.050067, SE = 0.009795
+Dataset 10: coefficient = -0.028512, SE = 0.009046
+Dataset 11: coefficient = -0.034019, SE = 0.010521
+Dataset 12: coefficient = -0.018023, SE = 0.011995
+Dataset 13: coefficient = -0.020815, SE = 0.013249
+Dataset 14: coefficient = -0.034770, SE = 0.012373
+Dataset 15: coefficient = -0.030943, SE = 0.013438
+Dataset 16: coefficient = -0.039643, SE = 0.015257
+Dataset 17: coefficient = -0.025737, SE = 0.014144
+Dataset 18: coefficient = -0.034400, SE = 0.012706
+Dataset 19: coefficient = -0.029477, SE = 0.017473
+Dataset 20: coefficient = -0.037920, SE = 0.010103
