@@ -10,7 +10,12 @@ def createModel(df):
     formula = 'palma_ratio~gdp_growth+education+fdi+log_gdp_pc+industry+inflation+trade+unemployment+urban+va_score+cc_score+ge_score+C(country)+C(year)'
 
     # regression for individual country
-    model = sm.ols(formula=formula, data=df).fit()
+    model = sm.ols(formula=formula, data=df).fit(
+        cov_type='cluster',
+        cov_kwds={"groups": df["country"]}
+    )
+
+    # model = sm.ols(formula=formula, data=df).fit()
 
     return model
 

@@ -42,7 +42,7 @@ start = time.time()
 # run multiple imputation per economy and save them to the folder IMPUTED_DATA
 for economy in economies:
     # datasets per economy, 5 datasets with 20 imputation cycles each
-    datasets = runMultipleImputation(economy, 5, 20)
+    datasets = runMultipleImputation(economy, 20, 25)
 
     # save each dataset for each country
     for dataset_num, data in enumerate(datasets, start=1):
