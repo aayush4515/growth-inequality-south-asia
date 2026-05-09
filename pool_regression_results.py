@@ -67,11 +67,6 @@ def pool_variable(results, variable_name):
     }
 
 
-# --------------------------------------------------
-# Assuming you already have this:
-# results = runRegression()
-# --------------------------------------------------
-
 gdp_growth_result = pool_variable(results, "gdp_growth")
 
 
